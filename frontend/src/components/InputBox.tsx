@@ -1,4 +1,4 @@
-import React, { type ChangeEventHandler } from 'react'
+import  { type ChangeEventHandler } from 'react'
 
 
 
@@ -7,7 +7,7 @@ interface LabelTypes {
     label : string,
     placeholder : string,
     type : string,
-    onChange : (e : ChangeEventHandler)=> void
+    onChange :  ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 }
 const InputBox = ({label , placeholder , onChange , type }: LabelTypes) => {
   return (

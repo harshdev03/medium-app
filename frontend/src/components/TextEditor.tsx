@@ -1,4 +1,4 @@
-import React, { type ChangeEventHandler } from 'react'
+import { type ChangeEventHandler } from 'react'
 
 interface TextType {
     onChange :  ChangeEventHandler<HTMLTextAreaElement>

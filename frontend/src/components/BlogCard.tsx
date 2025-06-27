@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Avatar from './Avatar'
 import Circle from './Circle'
 import { Link } from 'react-router-dom'
