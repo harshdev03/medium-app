@@ -42,7 +42,7 @@ const Publish = () => {
                 onClick={async () => {
         try {
             const response = await axios.post(
-            `${BACKEND_URL}api/v1/blog`,
+            `${BACKEND_URL}/api/v1/blog`,
             {
                 title,
                 content
@@ -54,7 +54,7 @@ const Publish = () => {
             }
             )
               console.log('Publish response:', response.data)
-            navigate(`/blog/${response.data.blog.id}`)
+            navigate(`blog/${response.data.blog.id}`)
         } catch (error) {
             console.error("Failed to publish blog:", error)
         }
