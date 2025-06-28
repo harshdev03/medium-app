@@ -54,7 +54,7 @@ const Publish = () => {
             }
             )
               console.log('Publish response:', response.data)
-            navigate(`blog/${response.data.blog.id}`)
+            navigate(`/blog/${response.data.blog.id}`)
         } catch (error) {
             console.error("Failed to publish blog:", error)
         }
