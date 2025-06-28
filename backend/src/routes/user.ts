@@ -59,10 +59,6 @@ user.post("/signup", async (c) => {
 
 
 
-
-
-
-
 user.post("/signin", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
@@ -89,7 +85,10 @@ user.post("/signin", async (c) => {
       return c.json({ msg: "Invalid Credentials" }, 400);
     }
 
-    const token = await sign({user : user.id}, c.env.JWT_SECRET)
+    const token = await sign(
+  { id: user.id, email: user.email },
+  c.env.JWT_SECRET
+)
     return c.json({token : token})
 
 
