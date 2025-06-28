@@ -36,8 +36,7 @@ const UserBlogs = ({ blog }: { blog: BlogType }) => {
               <Avatar name={blog.author.name} />
               <div className="font-bold text-2xl sm:text-3xl lg:text-4xl">{blog.author.name}</div>
               <div className="text-sm sm:text-base text-slate-700 pt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptas ipsam accusantium
-                tempore officia maxime modi, voluptatibus nam quod nesciunt!
+              {blog.title}
               </div>
             </div>
           </div>
