@@ -28,7 +28,7 @@ export const useBlogs = ()=>{
 
    async function fetchBlogs(){
     try{
-        const url = `${BACKEND_URL}api/v1/blog/bulk`
+        const url = `${BACKEND_URL}/api/v1/blog/bulk`
         const response = await axios.get(url , {
             headers:{
                 Authorization : `Bearer ${localStorage.getItem('token')}`
