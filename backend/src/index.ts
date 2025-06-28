@@ -6,7 +6,11 @@ import { cors } from 'hono/cors'
 
 const app = new Hono()
 
-app.use('/*' , cors())
+
+app.use('/*', cors({
+  origin: 'https://medium-app-pearl.vercel.app',
+  credentials: true
+}))
 app.route('/api/v1/user', user)
 app.route('/api/v1/blog', blog)
 app.route('/api/v1/' , middleware )
