@@ -23,7 +23,7 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
   async function sendRequest() {
     try {
       const response = await axios.post(
-        `${BACKEND_URL}api/v1/user/${type === "signup" ? "signup" : "signin"}`,
+        `${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}`,
         postInputs
       )
       const jwt: string = response.data.token
