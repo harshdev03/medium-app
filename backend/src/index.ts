@@ -15,8 +15,10 @@ app.use('/*', cors({
     ]
     return allowedOrigins.includes(origin ?? '') ? origin : ''
   },
-  credentials: true
+  credentials: true,
+  allowHeaders: ['Authorization', 'Content-Type']
 }))
+
 
 app.route('/api/v1/user', user)
 app.route('/api/v1/blog', blog)
