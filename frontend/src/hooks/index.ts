@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { errorBlogs, sucessBlogs } from "../types/use-toast"
+import { BACKEND_URL } from "../config"
 
 
 interface BlogsType {
@@ -27,7 +28,7 @@ export const useBlogs = ()=>{
 
    async function fetchBlogs(){
     try{
-        const url = 'http://127.0.0.1:8787/api/v1/blog/bulk'
+        const url = `${BACKEND_URL}api/v1/blog/bulk`
         const response = await axios.get(url , {
             headers:{
                 Authorization : `Bearer ${localStorage.getItem('token')}`
@@ -61,7 +62,7 @@ export const useBlog = ({id} : {id : string})=>{
 
    async function fetchBlog(){
     try{
-        const url = `http://127.0.0.1:8787/api/v1/blog/${id}`
+        const url = `${BACKEND_URL}/api/v1/blog/${id}`
         const response = await axios.get(url , {
             headers:{
                 Authorization : `Bearer ${localStorage.getItem('token')}`
