@@ -42,7 +42,7 @@ const Publish = () => {
                 onClick={async () => {
         try {
             const response = await axios.post(
-            `${BACKEND_URL}/api/v1/blog`,
+            `${BACKEND_URL}api/v1/blog`,
             {
                 title,
                 content
