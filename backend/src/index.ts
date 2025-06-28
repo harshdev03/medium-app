@@ -8,9 +8,16 @@ const app = new Hono()
 
 
 app.use('/*', cors({
-  origin: 'https://medium-app-pearl.vercel.app',
+  origin: (origin) => {
+    const allowedOrigins = [
+      'http://localhost:5173',
+      'https://medium-app-pearl.vercel.app'
+    ]
+    return allowedOrigins.includes(origin ?? '') ? origin : ''
+  },
   credentials: true
 }))
+
 app.route('/api/v1/user', user)
 app.route('/api/v1/blog', blog)
 app.route('/api/v1/' , middleware )
