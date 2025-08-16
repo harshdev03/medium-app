@@ -11,7 +11,7 @@ app.use('/*', cors({
   origin: (origin) => {
     const allowedOrigins = [
       'http://localhost:5173',
-      'https://harrsh.xyz',
+      'https://medium.harrsh.xyz',
       'https://medium-app-pearl.vercel.app'
     ]
     return allowedOrigins.includes(origin ?? '') ? origin : ''
