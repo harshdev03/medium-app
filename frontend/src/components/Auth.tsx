@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import InputBox from './InputBox'
 import type { SignupType } from '@harshchalwadi/medium-app'
@@ -34,6 +34,7 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
       } else {
         sucessSigninNotify()
       }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
       if (e.response?.status === 500) {
         serverWarningNotify()
@@ -46,9 +47,9 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8 bg-white ">
-      <div className="w-full max-w-md space-y-6">
-        <div className="text-2xl sm:text-3xl font-bold text-gray-900 ">
+    <div className="flex w-full min-h-screen mb-4 pt-4 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="w-full flex flex-col justify-center items-center max-w-2xl mx-auto space-y-6">
+        <div className="text-2xl sm:text-3xl font-bold text-gray-900">
           {type === "signup" ? "Create an account" : "Welcome back"}
         </div>
 
@@ -68,12 +69,13 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
           )}
         </div>
 
-        <div className="space-y-4">
+        <div className="w-full max-w-md space-y-4">
           {type === "signup" && (
             <InputBox
               label="Name"
               type="text"
               placeholder="harsh chalwadi"
+              autoComplete="name"
               onChange={(e) =>
                 setPostInputs({ ...postInputs, name: e.target.value })
               }
@@ -83,6 +85,7 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
             label="Email"
             type="email"
             placeholder="harsh@gmail.com"
+            autoComplete="email"
             onChange={(e) =>
               setPostInputs({ ...postInputs, email: e.target.value })
             }
@@ -91,6 +94,7 @@ const Auth = ({ type }: { type: "signup" | "signin" }) => {
             label="Password"
             type="password"
             placeholder="harsh@123"
+            autoComplete="new-password"
             onChange={(e) =>
               setPostInputs({ ...postInputs, password: e.target.value })
             }
