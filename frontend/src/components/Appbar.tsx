@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 const Appbar = () => {
   return (
-    <div className='fixed top-0  backdrop-blur-lg bg-white/10 w-full z-50'>
-      <div className='border-b border-slate-200 flex justify-between items-center px-4 md:px-8 lg:px-20 bg-white py-2'>
+    <div className='fixed top-0 backdrop-blur-lg bg-white/10 w-full z-50'>
+      <div className='border-b border-slate-200 flex justify-between items-center px-4 md:px-8 lg:px-20 bg-white/20 py-2'>
         
         <div className='font-semibold text-base md:text-lg'>
           <Link to={'/blogs'}>

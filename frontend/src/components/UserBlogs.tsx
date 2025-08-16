@@ -1,5 +1,4 @@
 
-import Appbar from './Appbar'
 import Avatar from './Avatar'
 
 interface BlogType {
@@ -14,8 +13,6 @@ interface BlogType {
 const UserBlogs = ({ blog }: { blog: BlogType }) => {
   return (
     <div>
-      <Appbar />
-
       <div className="flex justify-center px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-12 w-full pt-32 max-w-screen-xl gap-8">
           {/* Blog Content */}

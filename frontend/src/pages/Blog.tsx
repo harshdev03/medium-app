@@ -12,20 +12,27 @@ const Blog = () => {
 
   if (loading) {
     return (
-      <div>
+      <div className="min-h-screen bg-gray-50">
         <Appbar />
-        <div className='h-screen flex justify-center items-center flex-col'>
-          <div className='flex justify-center'>
-            <Spinner />
-          </div>
+        <div className="flex justify-center items-center h-[80vh]">
+          <Spinner />
         </div>
       </div>
     )
   }
 
   return (
-    <div>
-      {blog ? <UserBlogs blog={blog} /> : <div>Blog not found</div>}
+    <div className="min-h-screen bg-gray-50">
+      <Appbar />
+      <div className="pt-8 px-2 sm:px-8 pb-12">
+        <div className="w-full max-w-3xl mx-auto">
+          {blog ? (
+            <UserBlogs blog={blog} />
+          ) : (
+            <div className="text-center text-gray-600">Blog not found</div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }
