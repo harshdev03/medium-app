@@ -12,12 +12,13 @@ app.use('/*', cors({
     const allowedOrigins = [
       'http://localhost:5173',
       'https://medium.harrsh.xyz',
+      'https://harrsh.xyz',
       'https://medium-app-pearl.vercel.app'
     ]
     return allowedOrigins.includes(origin ?? '') ? origin : ''
   },
   credentials: true,
-  allowHeaders: ['Authorization', 'Content-Type']
+  allowHeaders: ['Authorization', 'Content-Type'],
 }))
 
 
