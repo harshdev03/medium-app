@@ -14,6 +14,13 @@ interface BlogsCardType{
 
 
 const BlogCard = ({id , authorName,title , content , publishedDate}: BlogsCardType) => {
+
+  const formatDate = new Date(publishedDate).toLocaleDateString("en-IN", {
+    day : "numeric",
+    month : "short",
+    year : "numeric"
+  })
+
   return (
     <Link to={`/blog/${id}`}>
     <div className='border-slate-300 border-b w-screen max-w-screen-md mb-4 cursor-pointer '>
@@ -26,7 +33,7 @@ const BlogCard = ({id , authorName,title , content , publishedDate}: BlogsCardTy
             <Circle/>
           </div>
           <div className='pl-2 font-light  flex justify-center flex-col  text-slate-500'>
-          {publishedDate} 
+          {formatDate} 
           </div>
 
         </div>

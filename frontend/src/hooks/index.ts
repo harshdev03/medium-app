@@ -8,6 +8,7 @@ interface BlogsType {
     "content" : string,
     "title" : string,
     "id" : number,
+    "publishDate" :string,
     "author":{
         "name" : string
     } 
@@ -17,6 +18,7 @@ interface BlogType {
     "content" : string,
     "title" : string,
     "id" : number,
+    "publishDate" :string,
     "author":{
         "name" : string
     } 

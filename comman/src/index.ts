@@ -13,13 +13,16 @@ export const signinSchema = z.object({
 
 export const createBlogSchema = z.object({
     title: z.string(),
-    content: z.string()
+    content: z.string(),
+    publishedDate : z.date()
 });
 
 export const updateBlogSchema = z.object({
     id: z.number(),
     title: z.string(),
-    content: z.string()
+    content: z.string(),
+    publishedDate : z.date()
+    
 });
 
 

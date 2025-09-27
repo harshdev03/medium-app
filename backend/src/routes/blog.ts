@@ -60,13 +60,13 @@ blog.post("/", async (c) => {
   }
 
   try {
-    const { title, content }: PostType = parsed.data;
+    const { title, content  }: PostType = parsed.data;
 
     const blog = await prisma.post.create({
       data: {
         title,
         content,
-        authorId: parseInt(authorId) 
+        authorId: parseInt(authorId), 
       }
     });
 
@@ -97,7 +97,7 @@ blog.put("/", async (c) => {
       where: { id: Number(id) },
       data: {
         title,
-        content
+        content,
       }
     });
 
@@ -121,6 +121,7 @@ blog.get("/bulk", async (c) => {
         title : true,
         id : true, 
         content : true,
+        publishedDate : true,
         author:{
           select:{
             name : true
@@ -129,7 +130,7 @@ blog.get("/bulk", async (c) => {
       }
     });
     return c.json({ blogs }, 200);
-
+    
   } catch (e) {
     return c.json({ msg: "Failed to fetch blogs" }, 500);
   }
@@ -152,11 +153,12 @@ blog.get("/:id", async (c) => {
         id : true,
         title : true,
         content : true,
+        publishedDate : true,
         author:{
           select:{
             name :true
           }
-        }
+        },
       }
     });
 
