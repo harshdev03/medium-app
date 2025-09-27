@@ -4,7 +4,8 @@ import Avatar from './Avatar'
 interface BlogType {
   content: string
   title: string
-  id: number
+  id: number,
+  publishedDate : string,
   author: {
     name: string
   }
@@ -20,7 +21,7 @@ const UserBlogs = ({ blog }: { blog: BlogType }) => {
             <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold break-words">
               {blog.title}
             </div>
-            <div className="text-slate-500 pt-3 text-sm sm:text-base">Posted on 2nd Dec</div>
+            <div className="text-slate-500 pt-3 text-sm sm:text-base">{blog.publishedDate}</div>
             <div className="text-base sm:text-lg text-slate-700 font-medium pt-4 break-words">
               {blog.content}
             </div>
