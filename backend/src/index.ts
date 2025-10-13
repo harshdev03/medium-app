@@ -7,6 +7,7 @@ import { cors } from 'hono/cors'
 const app = new Hono()
 
 const allowedOrigins = [
+  'http://localhost:3000',
   'http://localhost:5173',
   'https://medium.harrsh.xyz',
   'https://harrsh.xyz',
@@ -25,7 +26,6 @@ app.use(
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   })
 )
-
 
 app.options('/*', (c) => {
   return c.text('OK', 204)
