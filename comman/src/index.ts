@@ -27,6 +27,6 @@ export const updateBlogSchema = z.object({
 
 
 export type SignupType =  z.infer<typeof signupSchema>
-export type SigninType =  z.infer<typeof signupSchema>
+export type SigninType =  z.infer<typeof signinSchema>
 export type CreateBlogType = z.infer<typeof createBlogSchema>
 export type UpdateBlogType = z.infer<typeof updateBlogSchema>

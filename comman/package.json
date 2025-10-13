@@ -1,6 +1,6 @@
 {
   "name": "@harshchalwadi/medium-app",
-  "version": "1.2.0",
+  "version": "1.3.3",
   "description": "types for medium-app",
   "main": "dist/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@harshchalwadi/medium-app": "^1.1.0",
+    "@harshchalwadi/medium-app": "^1.3.0",
     "zod": "^3.25.67"
   }
 }
