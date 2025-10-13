@@ -24,8 +24,8 @@ export default function NavbarComp() {
   const { id } = useParams()
   const navigate = useNavigate()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const {blog} = useBlog({
-    id : id || ""
+  useBlog({
+    id: id || ""
   })
   return (
     <header className="fixed w-full border-b px-4 md:px-6">

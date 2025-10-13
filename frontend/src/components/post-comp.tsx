@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Navbar from './navbar'
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
