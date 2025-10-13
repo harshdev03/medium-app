@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button } from './ui/button'
 import { ArrowRightIcon, CornerUpLeft, User } from 'lucide-react'
 import { AvatarFallback , Avatar } from '@/components/ui/avatar'

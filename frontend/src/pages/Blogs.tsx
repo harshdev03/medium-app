@@ -1,4 +1,3 @@
-import React from 'react'
 import BlogCard from '@/components/blog-card'
 import NavbarComp from '@/components/navbar-comp'
 import { useBlogs } from '@/hooks/useBlogs'

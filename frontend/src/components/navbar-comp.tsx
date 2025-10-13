@@ -23,6 +23,7 @@ import { useBlog } from "@/hooks/useBlogs"
 export default function NavbarComp() {
   const { id } = useParams()
   const navigate = useNavigate()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {blog} = useBlog({
     id : id || ""
   })
