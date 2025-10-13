@@ -1,15 +1,9 @@
-
-import Quote from '../components/Quote'
-import Auth from '../components/Auth'
+import SignInComp from '@/components/signin-comp'
+import React from 'react'
 
 const Signin = () => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-2'>
-      <Auth type='signin'/>
-      <div className='hidden lg:block'>
-      <Quote/>
-      </div>
-    </div>
+    <SignInComp/>
   )
 }
 

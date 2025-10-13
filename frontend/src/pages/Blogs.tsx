@@ -1,36 +1,15 @@
-import BlogCard from '../components/BlogCard'
-import Appbar from '../components/Appbar'
-import { useBlogs } from '../hooks'
-import Sekelton from '../components/Sekelton'
+import React from 'react'
+import BlogCard from '@/components/blog-card'
+import NavbarComp from '@/components/navbar-comp'
+import { useBlogs } from '@/hooks/useBlogs'
 
 const Blogs = () => {
-  const { loading, blogs } = useBlogs()
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <Appbar />
-        <div className="pt-8 px-2 sm:px-8">
-          <div className="w-full max-w-4xl mx-auto space-y-6">
-            <Sekelton />
-            <Sekelton />
-            <Sekelton />
-            <Sekelton />
-            <Sekelton />
-            <Sekelton />
-          </div>
-        </div>
-      </div>
-    )
-  }
-
+  const { blogs } = useBlogs()
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Appbar />
-
-      <div className="pt-32 px-2 sm:px-8 pb-12">
-        <div className="w-full max-w-4xl mx-auto space-y-6">
-          {blogs.map((blog) => (
+    <div className='flex flex-col w-full'>
+        <div><NavbarComp/></div>
+        <div className='h-screen pt-3 sm:pt-20 flex-col items-center flex justify-center'>
+             {blogs.map((blog) => (
             <BlogCard
               key={blog.id}
               id={blog.id}
@@ -41,7 +20,6 @@ const Blogs = () => {
             />
           ))}
         </div>
-      </div>
     </div>
   )
 }

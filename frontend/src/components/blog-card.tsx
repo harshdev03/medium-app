@@ -1,6 +1,5 @@
 
-import Avatar from './Avatar'
-import Circle from './Circle'
+import { Dot, User } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 
@@ -22,22 +21,23 @@ const BlogCard = ({id , authorName,title , content , publishedDate}: BlogsCardTy
   })
 
   return (
-    <Link to={`/blog/${id}`}>
-    <div className='border-slate-300 border-b w-screen max-w-screen-md mb-4 cursor-pointer '>
-        <div className='flex'>
-          <Avatar name={authorName}/> 
-          <div className='pl-2 font-light flex justify-center flex-col'>
+    <div>
+    <Link className='pt-10' to={`/blog/${id}`}>
+    <div className='px-4 sm:px-3 border-b-amber-100 border-b  w-screen max-w-screen-md mb-4 cursor-pointer '>
+        <div className='flex'>  
+          <User className='h-6 w-6'/>
+          <div className='font-light flex justify-center flex-col'>
           {authorName} 
           </div>  
-          <div className='flex flex-col pl-1 justify-center'>
-            <Circle/>
+          <div className='flex flex-col justify-center'>
+            <Dot className='h-8 w-8'/>
           </div>
-          <div className='pl-2 font-light  flex justify-center flex-col  text-slate-500'>
+          <div className='font-light  flex justify-center flex-col'>
           {formatDate} 
           </div>
 
         </div>
-        <div className='text-xl pt-2 flex justify-center flex-col font-semibold'>
+        <div className='text-xl pt-2 flex justify-center flex-col font-light'>
             {title}
         </div>
 
@@ -45,11 +45,12 @@ const BlogCard = ({id , authorName,title , content , publishedDate}: BlogsCardTy
         {content?.length >= 100 ? content.slice(0 , 100) + "..." : content}
         </div>
 
-        <div className='text-slate-400 text-sm mb-2'>
+        <div className='text-sm mb-2'>
             {`${Math.ceil(content.length / 100)} minute(s) read `}
         </div>
     </div>
     </Link>
+    </div>
   )
 }
 

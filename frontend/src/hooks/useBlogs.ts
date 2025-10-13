@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { errorBlogs, sucessBlogs } from "../types/use-toast"
-import { BACKEND_URL } from "../config"
+import { BACKEND_URL } from "@/lib/config"
 
 
 interface BlogsType {
@@ -25,7 +24,6 @@ interface BlogType {
 }
 
 export const useBlogs = ()=>{
-    const [loading , setLoading] = useState(true)
     const [blogs , setBlogs] = useState<BlogsType[]>([])
 
    async function fetchBlogs(){
@@ -38,12 +36,9 @@ export const useBlogs = ()=>{
         })
 
         setBlogs(response.data.blogs)
-        sucessBlogs()
-        setLoading(false)
         
     }catch(e){
-        setLoading(false)
-        errorBlogs()
+        console.log(e)
     }
 
    }
@@ -53,13 +48,11 @@ export const useBlogs = ()=>{
     },[])
 
     return {
-        loading,
         blogs
     }
 }
 
 export const useBlog = ({id} : {id : string})=>{
-    const [loading , setLoading] = useState(true)
     const [blog , setBlog] = useState<BlogType>()
 
    async function fetchBlog(){
@@ -72,11 +65,9 @@ export const useBlog = ({id} : {id : string})=>{
         })
 
         setBlog(response.data.blog)
-        setLoading(false)
         
     }catch(e){
-        setLoading(false)
-        errorBlogs()
+        console.log(e)
     }
 
    }
@@ -86,7 +77,6 @@ export const useBlog = ({id} : {id : string})=>{
     },[id])
 
     return {
-        loading,
         blog
     }
 }
