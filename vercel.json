@@ -1,15 +1,8 @@
 {
-  "version": 2,
-  "builds": [
+  "rewirtes":[
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "frontend/dist" }
+      "source": "/(.*)",
+      "destination": "/"
     }
-  ],
-  "framework": "vite",
-  "buildCommand": "npm run build",
-  "outputDirectory": "frontend/dist",
-  "installCommand": "npm install",
-  "rootDir": "frontend"
+  ]
 }
