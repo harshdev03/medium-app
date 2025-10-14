@@ -13,7 +13,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
         <Navbar/>
-      <div className="pt-8 px-2 sm:px-8 pb-12">
+      <div className="pt-12 px-2 sm:px-8 pb-12">
         <div className="w-full max-w-3xl mx-auto">
           {blog ? (
             <UserBlogs blog={blog} />
