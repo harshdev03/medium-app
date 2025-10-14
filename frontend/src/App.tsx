@@ -1,11 +1,12 @@
 import Home from "@/components/home"
 import Provider from "@/lib/provider"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Signup from "@/pages/signup"
-import Signin from "@/pages/signin"
-import Blogs from "@/pages/blogs"
-import Publish from "@/pages/publish"
-import Blog from "@/pages/blog"
+import Signup from "@/pages/Signup"
+import Signin from "@/pages/Signin"
+import Blogs from "@/pages/Blogs"
+import Publish from "@/pages/Publish"
+import Blog from "@/pages/Blog"
+
 
 function App() {
   return (
