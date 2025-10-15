@@ -12,7 +12,7 @@ const Home = () => {
     </div>
     <div className="max-w-4xl  mx-auto w-full">
         <div className="flex h-screen flex-col  justify-center items-center">
-      <div className="flex">
+      <div className="flex pl-20 sm:pl-1">
             <Arrow/>
       </div>
             <div className="text-6xl mb-2"><InkMorphText
