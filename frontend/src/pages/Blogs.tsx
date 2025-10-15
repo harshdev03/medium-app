@@ -7,18 +7,20 @@ const Blogs = () => {
   return (
     <div className='flex flex-col w-full'>
         <div><NavbarComp/></div>
-        <div className='h-screen pt-3 sm:pt-20 flex-col items-center flex justify-center'>
+        <div className='pt-24'>
+        <div className='flex-col items-center flex justify-center'>
              {blogs.map((blog) => (
-            <BlogCard
-              key={blog.id}
-              id={blog.id}
-              authorName={blog.author?.name || 'Unknown Author'}
-              title={blog.title}
-              content={blog.content}
-              publishedDate={blog.publishedDate}
-            />
-          ))}
+               <BlogCard
+               key={blog.id}
+               id={blog.id}
+               authorName={blog.author?.name || 'Unknown Author'}
+               title={blog.title}
+               content={blog.content}
+               publishedDate={blog.publishedDate}
+               />
+              ))}
         </div>
+              </div>
     </div>
   )
 }
