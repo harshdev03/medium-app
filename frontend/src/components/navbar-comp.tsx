@@ -16,7 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "./ui/button"
-import { ArrowRightIcon } from "lucide-react"
+import { ArrowRightIcon, User } from "lucide-react"
 import { useBlog } from "@/hooks/useBlogs"
 
 
@@ -28,7 +28,7 @@ export default function NavbarComp() {
     id: id || ""
   })
   return (
-    <header className="fixed w-full border-b bg-neutral-900 px-4 md:px-6">
+    <header className="fixed w-full border-b backdrop-blur-3xl px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
         
         <div className="flex items-center gap-2">
@@ -48,10 +48,7 @@ export default function NavbarComp() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start">
                     <DropdownMenuItem asChild>
-                      <a href="#">back</a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <a href="#">signin</a>
+                      <a href="/signin">back</a>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -59,19 +56,11 @@ export default function NavbarComp() {
               <BreadcrumbItem className="max-md:hidden">
                 <BreadcrumbLink href="/signin">back</BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="max-md:hidden">
-                {" "}
-                /{" "}
-              </BreadcrumbSeparator>
-              <BreadcrumbItem className="max-md:hidden">
-                <BreadcrumbLink href="#" onClick={()=> navigate(`/blog/${id}`)}>your blog&apos;s</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator> / </BreadcrumbSeparator>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
         
-        <div className="flex items-center gap-4">
+        <div className="flex justify-center items-center gap-2">
             <Button onClick={()=> navigate("/publish")} className="group cursor-pointer text-xs" variant="ghost">
               Add Post
       <ArrowRightIcon
@@ -80,7 +69,7 @@ export default function NavbarComp() {
         aria-hidden="true"
       />
     </Button>
-          <UserMenu />
+          <User className="h-5 w-5"/>
         </div>
       </div>
     </header>

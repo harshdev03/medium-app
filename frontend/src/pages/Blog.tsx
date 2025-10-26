@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import UserBlogs from '@/components/user-blogs'
 import { useBlog } from '@/hooks/useBlogs'
 import Navbar from '@/components/navbar'
+import { Loader } from 'lucide-react'
 
 const Blog = () => {
   const { id } = useParams()
@@ -18,7 +19,7 @@ const Blog = () => {
           {blog ? (
             <UserBlogs blog={blog} />
           ) : (
-            <div className="text-center text-gray-600">Blog not found</div>
+            <div className="h-96 flex justify-center pt-20 items-center"><Loader/></div>
           )}
         </div>
       </div>

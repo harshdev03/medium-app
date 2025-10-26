@@ -23,7 +23,7 @@ const BlogCard = ({id , authorName,title , content , publishedDate}: BlogsCardTy
   return (
     <div>
     <Link className='pt-10' to={`/blog/${id}`}>
-    <div className='px-4 sm:px-3 border-b-amber-100 border-b  w-screen max-w-screen-md mb-4 cursor-pointer '>
+    <div className='px-4 sm:px-3 border-[#fff]/30 border-b  w-screen max-w-screen-md mb-4 cursor-pointer '>
         <div className='flex'>  
           <User className='h-6 w-6'/>
           <div className='font-light flex justify-center flex-col'>

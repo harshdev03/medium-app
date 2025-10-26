@@ -20,9 +20,9 @@ const UserBlogs = ({ blog }: { blog: BlogType }) => {
   return (
     <div>
       <div className="flex justify-center px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 w-full pt-32 max-w-screen-xl gap-8">
+        <div className="grid grid-cols-1   md:grid-cols-12 w-full pt-32 max-w-screen-xl gap-8">
           {/* Blog Content */}
-          <div className="md:col-span-8">
+          <div className="md:col-span-8 ">
             <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold break-words">
               {blog.title}
             </div>
@@ -40,10 +40,10 @@ const UserBlogs = ({ blog }: { blog: BlogType }) => {
               Author
             </div>
             <div className="flex pt-3 flex-col gap-2 items-start">
-              <Avatar>
-                <span className="text-lg font-semibold">
+              <Avatar className="flex justify-center">
+                <div className="text-lg text-center font-semibold">
                   {blog.author.name.charAt(0)}
-                </span>
+                </div>
               </Avatar>
               <div className="font-bold text-2xl sm:text-3xl lg:text-4xl">
                 {blog.author.name}
