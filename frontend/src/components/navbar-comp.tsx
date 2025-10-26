@@ -1,6 +1,5 @@
 import {Logo} from "@/lib/logo"
 import { useNavigate, useParams } from "react-router-dom"
-import UserMenu from "@/components/user-menu"
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
